@@ -1,3 +1,4 @@
+<?php include("path.php") ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,38 +11,37 @@
     <title>Document</title>
 </head>
 <body>
-<?php include("app/includes/nav.php"); ?>
+<?php include(ROOT_PATH . "/app/includes/nav.php");  ?>
 
 <div class="container s-around">
-    
-    <form class="col-3 col-s-10" action="login.php" method="post">
-        <div class="container s-around">
-         <h2 class="form-title">Login</h2>
-        </div>
-    <div class="container s-around">
-    <div class="form-item">
-        <label class="form-label" >Username</label>
-        <input type="text" name="username" class=" form-text ">
-    </div>
-    </div>
-    <div class="container s-around">
-    <div class="form-item"> 
-        <label class="">Password</label>
-        <input type="password" name="password" class="form-text">
-    </div>
+        <form class="form-auth  col-5 col-s-10" action="" method="post">
+
+            <h2 class="form-title">Login</h2>
+
+            <div class="form-item">
+                <label class="form-label">Username</label>
+                <input type="text" name="username" class="form-input ">
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">Password </label>
+                <input type="password" name="password" class="form-input">
+            </div>
+
+            <div class="form-item">
+                <button type="submit" name="login-btn" class="btn form-btn">Login</button>
+                <p> Or
+                    <a href="register.php"> Register </a>
+                </p>
+            </div>
+
+
+        </form>
+
 </div>
-    
-    <div class="container s-around">
-        <button type="submit" name="login-btn" class="btn form-btn"></button>
-        <p> Or <a href="register.php"> Register </a> </p>
-    </div>
-    
-
-</form>
-</div>
 
 
 
-<?php include("app/includes/footer.php");  ?>
+<?php include(ROOT_PATH. "/app/includes/footer.php"); ?>
 </body>
 </html>

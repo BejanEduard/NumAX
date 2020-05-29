@@ -214,41 +214,53 @@ footer #logo:hover, footer .nav-list a:hover{
     height: auto;
 }
 
-
-form{
-    border: 1px solid black;
+.form-auth{
     margin-top:25px;
-
+    border: rgba(101, 101, 202,0.5) 2px solid;
+    padding: 25px;
+    background-color: rgb(101, 101, 202);
+    min-width: 40%;
 }
 
 .form-title{
     text-align: center;
-    padding-bottom:10px;
-    
-    
+    color:black;
 }
 
 .form-item{
-    width:80%;
-    align-content: center;
-}
-
-.form-text{
-
+    width:75%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:15px;
 }
 
 .form-label{
-    
-    width:25%;
-    margin-left:15px;
+    font-family: 'Sen' , sans-serif;    
+    font-size:20px;
+    display: block;
     
 }
 
-form input{
+.form-input{
+    width:100%;
     
-    margin-bottom:10px;
-    min-width:75%
+    padding:15px;
+    font-family: 'Sen';
+    font-size:20px;
+}
+
+.form-btn{
+    display: inline-block;
+    background: green;
+    border-radius: 5%;
+    width:40%;
+    text-align: center;
+    min-width:100px;
+}
+
+.form-item p {
     
+    float:right;
 }
 
 .btn {

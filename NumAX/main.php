@@ -1,3 +1,5 @@
+<?php include("path.php") ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +16,7 @@
 <body>
     
     <!-- NAVBAR HERE -->
-    <?php include("app/includes/nav.php");  ?>
+    <?php include(ROOT_PATH . "/app/includes/nav.php");  ?>
 
 
     <section id="introduction">
@@ -53,7 +55,8 @@
     </section>
 
     <!-- FOOTER HERE -->
-    <?php include("app/includes/footer.php"); ?>
+    <?php include(ROOT_PATH. "/app/includes/footer.php"); ?>
+    
 </body>
 
 </html>
