@@ -8,6 +8,9 @@ nav{
     font-family: 'Sen' , sans-serif;   
 }
 
+
+
+
 #logo{
     font-size:30px;
     color:rgb(46, 46, 143);
@@ -15,6 +18,24 @@ nav{
     margin-left:10px;
     margin-bottom:10px;
     text-decoration: none;
+}
+
+
+.main-color{
+    color:rgb(46, 46, 143);
+}
+
+.bg-main-color{
+    background-color: rgb(46, 46, 143);
+}
+
+
+.transp{
+    color: rgba(46, 46, 143, 0.597);
+}
+
+.bg-transp{
+    background-color:rgba(46, 46, 143, 0.597);
 }
 
  .nav-list a{
@@ -201,6 +222,7 @@ footer #logo:hover, footer .nav-list a:hover{
     display: inline-block;
     margin:auto;
     max-width: 30%;
+    min-width:20%;
     margin-top:20px;
     height: auto;
 }
@@ -213,6 +235,11 @@ footer #logo:hover, footer .nav-list a:hover{
     max-width:10%;
     height: auto;
 }
+
+.coin-sides a{
+    text-decoration:none;
+}
+/* -----------------FORM FOR REGISTER AND LOGIN--------------------- */
 
 .form-auth{
     margin-top:25px;
@@ -270,6 +297,32 @@ footer #logo:hover, footer .nav-list a:hover{
     cursor: pointer; /* Add a pointer cursor on mouse-over */
   }
 
+.error{
+    background: red;
+    color: white;
+    text-align:center;
+}
+
+.success{
+    background: green;
+    color: white;
+    text-align:center;
+}
+
+.info{
+    background: grey;
+    color: white;
+    text-align:center;
+}
+
+
+ /* ----------------------------INDIVIDUAL COIN PAGE ------------------------ */
+
+
+
+
+
+ 
 
  /* For mobile phones: */
  [class*="col-"] {

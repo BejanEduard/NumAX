@@ -1,4 +1,7 @@
-<?php include("path.php") ?>
+<?php include("path.php"); ?>
+<?php include(ROOT_PATH . "/app/controllers/coins.php") ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +17,7 @@
 
 <body>
     <!-- NAVBAR HERE -->
-    <?php include(ROOT_PATH . "/app/includes/nav.php");  ?>
+    <?php include(ROOT_PATH . "/app/includes/nav.php"); ?>
 
     <div class="filter-section">
         <div class="container">
@@ -50,87 +53,60 @@
 
         </div>
     </div>
-    
-    <div class="coin-info container">
-        <div class="coin-picture col-5 col-s-4">
-            <div class="coin-sides">
-                <img src="assets/img/catalog1_side1.jpg" alt="No Photo Available">
-                <img src="assets/img/catalog1_side2.jpg" alt="No Photo Available">
-            </div>
-        </div>
-        <div class="coin-text col-7 col-s-8">
-            <div class="coin-details">
-                <h3>Silver Tetradrachm of Nicomedes III, Bithynia, 149 BC - 120 BC. 1944.100.41900</h3>
-                <h4>Non-circulating coin : Outstanding personalities of Abkhazia Silver (.925) • 33.94 g • ⌀ 39 mm</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum laudantium fugiat fugit repellendus aspernatur
-                    animi quis, eligendi ab quo ipsum quas blanditiis non dolorum harum exercitationem nesciunt modi ipsa
-                    sunt!
-                </p>
-                <img src="assets/img/bangladesh.png" alt="No picture available">
-            </div>
-        </div>
-    </div>
-    
-    <div class="coin-info container">
-        <div class="coin-picture col-5 col-s-4">
-            <div class="coin-sides">
-                <img src="assets/img/catalog1_side1.jpg" alt="No Photo Available">
-                <img src="assets/img/catalog1_side2.jpg" alt="No Photo Available">
-            </div>
-        </div>
-        <div class="coin-text col-7 col-s-8">
-            <div class="coin-details">
-                <h3>Silver Tetradrachm of Nicomedes III, Bithynia, 149 BC - 120 BC. 1944.100.41900</h3>
-                <h4>Non-circulating coin : Outstanding personalities of Abkhazia Silver (.925) • 33.94 g • ⌀ 39 mm</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum laudantium fugiat fugit repellendus aspernatur
-                    animi quis, eligendi ab quo ipsum quas blanditiis non dolorum harum exercitationem nesciunt modi ipsa
-                    sunt!
-                </p>
-                <img src="assets/img/bangladesh.png" alt="No picture available">
-            </div>
-        </div>
-    </div>
-    <div class="coin-info container">
-        <div class="coin-picture col-5 col-s-4">
-            <div class="coin-sides">
-                <img src="assets/img/catalog1_side1.jpg" alt="No Photo Available">
-                <img src="assets/img/catalog1_side2.jpg" alt="No Photo Available">
-            </div>
-        </div>
-        <div class="coin-text col-7 col-s-8">
-            <div class="coin-details">
-                <h3>Silver Tetradrachm of Nicomedes III, Bithynia, 149 BC - 120 BC. 1944.100.41900</h3>
-                <h4>Non-circulating coin : Outstanding personalities of Abkhazia Silver (.925) • 33.94 g • ⌀ 39 mm</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum laudantium fugiat fugit repellendus aspernatur
-                    animi quis, eligendi ab quo ipsum quas blanditiis non dolorum harum exercitationem nesciunt modi ipsa
-                    sunt!
-                </p>
-                <img src="assets/img/bangladesh.png" alt="No picture available">
-            </div>
-        </div>
-    </div>
-    <div class="coin-info container">
-        <div class="coin-picture col-5 col-s-4">
-            <div class="coin-sides">
-                <img src="assets/img/catalog1_side1.jpg" alt="No Photo Available">
-                <img src="assets/img/catalog1_side2.jpg" alt="No Photo Available">
-            </div>
-        </div>
-        <div class="coin-text col-7 col-s-8">
-            <div class="coin-details">
-                <h3>Silver Tetradrachm of Nicomedes III, Bithynia, 149 BC - 120 BC. 1944.100.41900</h3>
-                <h4>Non-circulating coin : Outstanding personalities of Abkhazia Silver (.925) • 33.94 g • ⌀ 39 mm</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum laudantium fugiat fugit repellendus aspernatur
-                    animi quis, eligendi ab quo ipsum quas blanditiis non dolorum harum exercitationem nesciunt modi ipsa
-                    sunt!
-                </p>
-                <img src="assets/img/bangladesh.png" alt="No picture available">
-            </div>
-        </div>
-    </div>
 
+    <?php include(ROOT_PATH . "/app/includes/messages.php") ?>
 
-    <?php include(ROOT_PATH. "/app/includes/footer.php"); ?>
+    <?php foreach ($coins as $coin) : ?>
+    <div class="coin-info container">
+        <div class="coin-picture col-5 col-s-4">
+            <div class="coin-sides">
+                <a href="<?php echo BASE_URL . '\coin.php?id=' . $coin['id'] ?>">
+                <img src="assets/img/<?php echo $coin['side1']; ?>" alt="No Photo Available">
+                </a>
+                <a href="<?php echo BASE_URL . '\coin.php?id=' . $coin['id'] ?>">
+                <img src="assets/img/<?php echo $coin['side2']; ?>" alt="No Photo Available">
+                </a>
+                
+                <?php if (isset($_SESSION['id'])) : ?>
+                
+                    <form  action="catalog.php" method="post">
+                    <input type="hidden" name="id_coin"  value="<?php echo $coin['id']; ?>">
+                    <div class="form-item">
+                    <?php if (in_array($coin, $personal_coins)) : ?>
+                    <button type="submit" name="add-btn" class="btn form-btn info" disabled>You already have this coin!</button>
+                    <?php else : ?>      
+                    <button type="submit" name="add-btn" class="btn form-btn ">Add coin to your collection!</button>
+                    <?php endif; ?>
+                    </div>
+                    </form>
+                <?php endif; ?>
+
+            
+            </div>
+        </div>
+        <div class="coin-text col-7 col-s-8">
+            <div class="coin-details">
+                <h3><?php echo $coin['name'] . ' ' . $coin['provenience']; ?></h3>
+                <?php if ($coin['circulation'] === 1) : ?>
+                <h4>
+                Non-circulating coin :  </h4>
+<?php else : ?> 
+<h4>
+                Circulating coin : <?php echo $coin['country'] . ' • ' . $coin['weight'] . 'g • ' . $coin['thickness'] . 'mm' ?> </h4>
+
+<?php endif; ?>
+                
+                <p><?php echo $coin['description']; ?>
+                </p>
+                <img src="assets/img/flags/<?php echo strtolower($coin['country']); ?>.png" alt="No picture available">
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
+
+    
+
+    <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 </body>
 
 </html>

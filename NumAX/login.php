@@ -1,4 +1,6 @@
-<?php include("path.php") ?>
+<?php include("path.php")?>
+<?php include(ROOT_PATH ."/app/controllers/users.php") ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +16,9 @@
 <?php include(ROOT_PATH . "/app/includes/nav.php");  ?>
 
 <div class="container s-around">
-        <form class="form-auth  col-5 col-s-10" action="" method="post">
-
-            <h2 class="form-title">Login</h2>
+        <form class="form-auth  col-5 col-s-10" action="login.php" method="post">
+        <?php include(ROOT_PATH . "/app/helpers/formErrors.php");  ?>
+            <h2 class="form-title">Login</h2>   
 
             <div class="form-item">
                 <label class="form-label">Username</label>

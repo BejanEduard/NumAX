@@ -2,7 +2,6 @@
 <?php include(ROOT_PATH ."/app/controllers/users.php") ?>
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,22 +17,27 @@
 <?php include(ROOT_PATH . "/app/includes/nav.php");  ?>
 <div class="container s-around">
         <form class="form-auth  col-5 col-s-10" action="register.php" method="post">
+             
+           
+        <?php include(ROOT_PATH . "/app/helpers/formErrors.php");  ?>
+
+            
 
             <h2 class="form-title">Register</h2>
 
             <div class="form-item">
                 <label class="form-label">Username</label>
-                <input type="text" name="username" class="form-input ">
+                <input type="text" name="username" class="form-input" value="<?php echo $username; ?>">
             </div>
 
              <div class="form-item">
                 <label class="form-label">Email</label>
-                <input type="email" name="email" class="form-input ">
+                <input type="email" name="email" class="form-input " value="<?php echo $email;  ?>">
             </div>
 
             <div class="form-item">
                 <label class="form-label">Password </label>
-                <input type="password" name="password" class="form-input">
+                <input type="password" name="password" class="form-input" >
             </div>
 
              <div class="form-item">

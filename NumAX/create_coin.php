@@ -1,4 +1,6 @@
 <?php include("path.php") ?>
+<?php include(ROOT_PATH . "/app/controllers/coins.php") ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,24 +13,26 @@
     <title>Document</title>
 </head>
 <body>
-<?php include(ROOT_PATH . "/app/includes/nav.php");  ?>
+<?php include(ROOT_PATH . "/app/includes/nav.php"); ?>
 <div class="container s-around">
-        <form id="coin-form" class="form-auth  col-5 col-s-10" action="" method="post">
+        <form id="coin-form" class="form-auth  col-5 col-s-10" action="create_coin.php" method="post">
+        <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
+        <?php include(ROOT_PATH . "/app/includes/messages.php") ?>
 
             <h2 class="form-title">Create Coin</h2>
-
+            
             <div class="form-item">
                 <label class="form-label">Name</label>
-                <input type="text" name="coin-name" class="form-input ">
+                <input type="text" name="name" class="form-input" value="<?php echo $name; ?>">
             </div>
 
              <div class="form-item">
-                <label class="form-label">Data Provenienta</label>
-                <input type="text" name="coin-provenience" class="form-input ">
+                <label class="form-label">Period</label>
+                <input type="text" name="provenience" class="form-input" value="<?php echo $provenience; ?>"required>
             </div>
             <div class="form-item">
-                <label class="form-label">In Circulatie</label>
-                <input type="radio"  name="circulation" value="yes">
+                <label class="form-label">In Circulation?</label>
+                <input type="radio"  name="circulation" value="yes" checked>
                 <label for="circulation">Yes</label><br>
                 <input type="radio"  name="circulation" value="no">
                 <label for="circulation">No</label><br>
@@ -36,20 +40,20 @@
             
             <div class="form-item">
                 <label class="form-label">Coin Description</label>
-                <textarea class="form-input" id="w3review" placeholder="Description" form="coin-form" rows="4">
-                
+                <textarea class="form-input"  name="description" placeholder="Description" form="coin-form" rows="4" >
+                <?php echo $description; ?>
                 </textarea>
             </div>
 
             <div class="form-item">
             <label class="form-label" for="img">Select sides:</label>
-            <input class="form-input" type="file" id="img" name="img" accept="image/*">
-            <input class="form-input" type="file" id="img" name="img" accept="image/*">
+            <input class="form-input" type="file" id="img" name="side1" accept="image/*" value="<?php echo $side1; ?>">
+            <input class="form-input" type="file" id="img" name="side2" accept="image/*" value="<?php echo $side2; ?>">
             </div>
 
             <div class="form-item">
-            <label class="form-label" for="cars">Choose a country:</label>
-                <select class="form-input" name="country" id="countries" form="coin-form">
+            <label class="form-label" for="country">Choose a country:</label>
+                <select class="form-input" name="country" id="countries" form="coin-form" value="<?php echo $country; ?>">
                 <option value="Afganistan">Afghanistan</option>
    <option value="Albania">Albania</option>
    <option value="Algeria">Algeria</option>
@@ -299,10 +303,81 @@
                 </select>
             </div>
 
+            <!-- VALUE  -->
             <div class="form-item">
-                <button type="submit" name="login-btn" class="btn form-btn">Create</button>
+                <label class="form-label">Value (in RON)</label>
+                <input type="text" name="value" class="form-input" value="<?php echo $value; ?>">
+            </div>
+
+            <!-- CURRENCY  -->
+            <div class="form-item">
+                <label class="form-label">Currency</label>
+                <input type="text" name="currency" class="form-input" value="<?php echo $currency; ?>">
+            </div>
+
+            <!-- COMPOSITION  -->
+            <div class="form-item">
+            <label class="form-label" for="composition">Composition:</label>
+                <select class="form-input" name="composition" id="countries" form="coin-form" value="<?php echo $composition; ?>">
+                <option value="Aluminium">Aluminium</option>
+                <option value="Brass">Brass</option>
+                <option value="Bronze">Bronze</option>
+                <option value="Cooper">Cooper</option>
+                <option value="Gold">Gold</option>
+                <option value="Iron">Iron</option>
+                <option value="Steel">Steel</option>
+                <option value="Wood">Wood</option>
+                <option value="Others">Others...</option>
+                </select>
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">Weight (in g.)</label>
+                <input type="number" step="0.1" class="form-input" value="<?php echo $weight; ?>">
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">Diameter (in mm.)</label>
+                <input type="number" step="0.1" class="form-input" value="<?php echo $diameter; ?>">
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">Thickness (in mm.)</label>
+                <input type="number" step="0.1" name="thickness" class="form-input" value="<?php echo $thickness; ?>">
+            </div>
+
+            <div class="form-item">
+            <label class="form-label" for="shape">Shape:</label>
+                <select class="form-input" name="shape" id="shape" form="coin-form" >
+                
+                <option value="Round">Round</option>
+                <option value="Square">Square</option>
+                <option value="Triangle">Triangle</option>
+                <option value="Other">Other shape</option>
+                </select>
+            </div>
+
+            
+
+            <div class="form-item">
+                <label class="form-label">Obverse description</label>
+                <textarea class="form-input"  name="obverse" placeholder="Obverse description" form="coin-form" rows="4" >
+                <?php echo $obverse_description; ?>
+                </textarea>
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">Reverse description</label>
+                <textarea class="form-input"  name="reverse" placeholder="Reverse Description" form="coin-form" rows="4" >
+                <?php echo $reverse_description; ?>
+                </textarea>
+            </div>
+
+
+            <div class="form-item">
+                <button type="submit" name="create-btn" class="btn form-btn">Create</button>
                 <p> Or if you are not logged in
-                    <a href="register.php"> Login </a>
+                    <a href="login.php"> Login </a>
                 </p>
             </div>
 
@@ -315,6 +390,6 @@
 
 
 
-<?php include(ROOT_PATH. "/app/includes/footer.php"); ?>
+<?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 </body>
 </html>

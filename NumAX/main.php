@@ -1,4 +1,6 @@
-<?php include("path.php") ?>
+<?php include("path.php") ;
+include(ROOT_PATH . "/app/database/db.php");
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/cdd030e6ac.js" crossorigin="anonymous"></script>
+    
     <title>NumAx</title>
 </head>
 
@@ -17,7 +20,8 @@
     
     <!-- NAVBAR HERE -->
     <?php include(ROOT_PATH . "/app/includes/nav.php");  ?>
-
+    <?php include(ROOT_PATH . "/app/includes/messages.php") ?>
+    
 
     <section id="introduction">
         <div class="container">
