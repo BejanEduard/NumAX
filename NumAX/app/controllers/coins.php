@@ -3,9 +3,10 @@
 
 include(ROOT_PATH . "/app/database/db.php");
 include(ROOT_PATH . "/app/helpers/validateCoin.php");
+include(ROOT_PATH . "/app/helpers/uploadSides.php");
 
     $errors = array();
-    
+    $sides = array();
     $name = '';
     $provenience = '';
     $circulation = '';
@@ -20,7 +21,7 @@ include(ROOT_PATH . "/app/helpers/validateCoin.php");
     $diameter ='';
     $thickness = '';
     $shape = '';
-    $demonetized = '';
+//    $demonetized = '';
     $obverse_description = '';
     $reverse_description = '';
 
@@ -41,8 +42,11 @@ if(isset($_POST['create-btn'])){
     if(count($errors) === 0){
             // Delete from $_POST array the unwanted values
         unset($_POST['create-btn']);
-
-
+        $sides=upload();
+        $_POST['side1']=$sides[0];
+        $_POST['side2']=$sides[1];
+        //print_r($_POST['side1']);
+        //print_r($_POST['side2']);
         $coin_id = create($table,$_POST);
         
         $ownership_id = create('ownership',["id_user" => $_SESSION['id'],"id_coin" => $coin_id]);
@@ -61,7 +65,9 @@ if(isset($_POST['create-btn'])){
     $circulation = $_POST['circulation'];
     $description = $_POST['description'];
     $side1 = $_POST['side1'];
+    print_r($side1);
     $side2 = $_POST['side2'];
+    print_r($side2);
     $country = $_POST['country'];
     $value = $_POST['value'];
     $currency =$_POST['currency'];
@@ -70,7 +76,7 @@ if(isset($_POST['create-btn'])){
     $diameter =$_POST['diameter'];
     $thickness = $_POST['thickness'];
     $shape = $_POST['shape'];
-    $demonetized = $_POST['demonetized'];
+  //  $demonetized = $_POST['demonetized'];
     $obverse_description = $_POST['obverse'];
     $reverse_description = $_POST['reverse'];
 

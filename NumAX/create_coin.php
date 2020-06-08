@@ -15,7 +15,7 @@
 <body>
 <?php include(ROOT_PATH . "/app/includes/nav.php"); ?>
 <div class="container s-around">
-        <form id="coin-form" class="form-auth  col-5 col-s-10" action="create_coin.php" method="post">
+        <form id="coin-form" class="form-auth  col-5 col-s-10" action="create_coin.php" method="post" enctype="multipart/form-data">
         <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
         <?php include(ROOT_PATH . "/app/includes/messages.php") ?>
 
@@ -333,12 +333,12 @@
 
             <div class="form-item">
                 <label class="form-label">Weight (in g.)</label>
-                <input type="number" step="0.1" class="form-input" value="<?php echo $weight; ?>">
+                <input type="number" step="0.1" name="weight" class="form-input" value="<?php echo $weight; ?>">
             </div>
 
             <div class="form-item">
                 <label class="form-label">Diameter (in mm.)</label>
-                <input type="number" step="0.1" class="form-input" value="<?php echo $diameter; ?>">
+                <input type="number" step="0.1" name ="diameter" class="form-input" value="<?php echo $diameter; ?>">
             </div>
 
             <div class="form-item">
