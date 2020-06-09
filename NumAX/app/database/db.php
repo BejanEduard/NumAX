@@ -95,8 +95,6 @@ function selectPersonalCoins($conditions)
     }
     $i++;
 }
-    print_r($sql);
-    print_r($conditions);
     $stmt = executeQuery($sql, $conditions);
     $results = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     return $results;
