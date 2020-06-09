@@ -18,9 +18,7 @@
 <body>
     <!-- NAVBAR HERE -->
     <?php include(ROOT_PATH . "/app/includes/nav.php"); ?>
-
     <?php include(ROOT_PATH . "/app/includes/filters.php"); ?>
-
     <?php include(ROOT_PATH . "/app/includes/messages.php") ?>
     <?php if (isset($_SESSION['id'])) : ?>
     <?php foreach ($personal_coins as $coin) : ?>

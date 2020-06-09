@@ -176,6 +176,7 @@ footer #logo:hover, footer .nav-list a:hover{
 .filter-section{
     margin-top:50px;
     padding: 10px;
+    
 }
 
 .filter-option{
@@ -188,9 +189,12 @@ footer #logo:hover, footer .nav-list a:hover{
     border-radius: 5px;
     background-color: rgba(19, 3, 3, 0.501);
     color:white;
-    
+    margin-left:auto;
+    margin-right:auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    display: inline-flex;
 }
-
 .filter-option h4{
     font-size:15px;
     display: inline-block; 

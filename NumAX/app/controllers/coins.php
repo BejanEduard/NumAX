@@ -5,6 +5,7 @@ include(ROOT_PATH . "/app/database/db.php");
 include(ROOT_PATH . "/app/helpers/validateCoin.php");
 include(ROOT_PATH . "/app/helpers/uploadSides.php");
 
+
     $errors = array();
     $sides = array();
     $name = '';
@@ -24,16 +25,33 @@ include(ROOT_PATH . "/app/helpers/uploadSides.php");
 //    $demonetized = '';
     $obverse_description = '';
     $reverse_description = '';
-
+    $coin = '';
 
     $table = 'coins';
-
-    $coins = selectAll($table);
-    $coin = '';
+    if(isset($_POST['filter-btn']) ){
+    $filter=array();
+    if($_POST['country']== "All"){
+        unset($_POST['country']);}
+        else{$filter['country']=$_POST['country'];}
+    if($_POST['composition'] =="All"){
+        unset($_POST['composition']);}
+        else{$filter['composition']=$_POST['composition'];}
+    if($_POST['shape'] =="All"){
+        unset($_POST['shape']);}
+    else{$filter['shape']=$_POST['shape'];}
+    $coins=selectAll($table,$filter);
+    }
+    else{$coins = selectAll($table);}
     
-    if(isset($_SESSION['id']))
-        $personal_coins = selectPersonalCoins(['users.id' => $_SESSION['id']]);
+    if(isset($_SESSION['id']) AND isset($_POST['filter-btn'])){
+            $filter['users.id']=$_SESSION['id'];
+            $personal_coins = selectPersonalCoins($filter);
+            unset($_POST['filter-btn']);
+        }else{
+        $personal_coins = selectPersonalCoins(['users.id'=>$_SESSION['id']]);  
+        }
 
+    
 if(isset($_POST['create-btn'])){
      
 
@@ -45,8 +63,6 @@ if(isset($_POST['create-btn'])){
         $sides=upload();
         $_POST['side1']=$sides[0];
         $_POST['side2']=$sides[1];
-        //print_r($_POST['side1']);
-        //print_r($_POST['side2']);
         $coin_id = create($table,$_POST);
         
         $ownership_id = create('ownership',["id_user" => $_SESSION['id'],"id_coin" => $coin_id]);
@@ -65,9 +81,7 @@ if(isset($_POST['create-btn'])){
     $circulation = $_POST['circulation'];
     $description = $_POST['description'];
     $side1 = $_POST['side1'];
-    print_r($side1);
     $side2 = $_POST['side2'];
-    print_r($side2);
     $country = $_POST['country'];
     $value = $_POST['value'];
     $currency =$_POST['currency'];
