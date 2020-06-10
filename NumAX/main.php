@@ -25,7 +25,7 @@ include(ROOT_PATH . "/app/database/db.php");
 
     <section class="introduction">
         <div class="container">
-            <div class="info col-8 col-s-6 ">
+            <div class="information col-8 col-s-6 ">
                 <h1>The Biggest Collection of Coins on Earth</h1>
                 <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam aperiam ullam non quas, officia aspernatur
                     hic error delectus omnis, sequi modi. Veniam omnis facilis impedit magnam delectus ad nesciunt quae.</h3>

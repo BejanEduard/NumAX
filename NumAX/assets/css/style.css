@@ -97,17 +97,17 @@ nav input:hover{
     
 }
 
-.info{
+.information{
     color:white;
     text-align: center;
     padding-top: 25px; 
 }
 
-.info h1{
+.information h1{
     font-size: 45px;
 }
 
-.info h3{
+.information h3{
     font-size:20px;
 }
 
@@ -318,7 +318,7 @@ footer .logo:hover, footer .nav-list a:hover{
     text-align:center;
 }
 
-.infof{
+.info{
     background: grey;
     color: white;
     text-align:center;
