@@ -318,10 +318,45 @@ footer #logo:hover, footer .nav-list a:hover{
 
  /* ----------------------------INDIVIDUAL COIN PAGE ------------------------ */
 
+.coin-statistics img{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.coin-statistics{
+    text-align:center;
+}
+
+
+/* ---------------------------TOP FIVE CLASAMENT--------------------------- */
+
+.table-info{
+  
+  border: 2px solid black;
+  border-radius:5px;
+  margin:25px;
+  font-size: 17px; 
+  padding: 25px;
+  background-color: rgb(101, 101, 202);
+  color:white;
+  border-spacing: 0;
+}
+
+.table-info th{
+    padding:5px;
+}
+
+.table-info a{
+    text-decoration: none;
+    color:white;
+}
 
 
 
-
+ .table-hover:hover, .table-info a:hover{
+     
+     color:black;
+ }
  
 
  /* For mobile phones: */
@@ -386,6 +421,10 @@ footer #logo:hover, footer .nav-list a:hover{
 .overlay{
     background-color:rgb(255, 255, 255,0.1);
     height:500px;
+}
+
+.m-1{
+    margin:10px;
 }
 
 * {

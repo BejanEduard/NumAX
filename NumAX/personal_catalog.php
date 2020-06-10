@@ -54,8 +54,28 @@
         </div>
     </div>
 
+    
+
     <?php include(ROOT_PATH . "/app/includes/messages.php") ?>
+    <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
+    
     <?php if (isset($_SESSION['id'])) : ?>
+    <div class="container s-around">
+        <form  action="personal_catalog.php" enctype="multipart/form-data" method="post" class="col-4 col-s-10 m-1">
+                    <div class="">
+                        <button type="submit" name="exportCSV" class="btn form-btn sucess">Export Your Coins</button>
+                    </div>                                       
+        </form>
+
+        <form  action="personal_catalog.php" enctype="multipart/form-data" method="post" class="col-4 col-s-10 m-1" >   
+                    <div class="">    
+                        <button type="submit" name="importCSV" class="btn form-btn sucess">Import Your Coins</button>
+                        <input type="file" name="csvfile" required>
+                    </div>
+                    
+        </form>
+    </div>
+    
     <?php foreach ($personal_coins as $coin) : ?>
     <div class="coin-info container">
         <div class="coin-picture col-5 col-s-4">
@@ -99,21 +119,6 @@
 <?php endforeach; ?>
 <?php endif; ?>
 
-<div id="badge-section">
-<div class="container s-around">
-    <img src="assets/img/grades.jpg" >
-    <img src="assets/img/coin_types.jpg" >
-    <img src="assets/img/composition.jpg" >
-</div>
-</div>
-
-<div id="badge-section">
-<div class="container s-around">
-    <img src="assets/img/weight.jpg" >
-    <img src="assets/img/value.jpg" >
-    <img src="assets/img/records.jpg" >
-</div>
-</div>
     
 
     <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>

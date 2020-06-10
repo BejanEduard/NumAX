@@ -21,6 +21,9 @@
                     <a href="<?php echo BASE_URL . '/personal_catalog.php' ?>">My Catalog</a>
                     </li>
                     <li>
+                    <a href="<?php echo BASE_URL . '/statistics.php' ?>">Statistics</a>
+                    </li>
+                    <li>
                     <a href="<?php echo BASE_URL . '/logout.php' ?>"> Logout</a>
                     </li>
                     

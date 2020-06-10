@@ -93,6 +93,21 @@ function selectPersonalCoins($conditions)
 
 }
 
+function getTopFiveCoins()
+{
+    global $conn;
+    $sql = "SELECT coins.*, count(*) as number FROM coins JOIN ownership ON coins.id=ownership.id_coin JOIN users ON ownership.id_user=users.id GROUP BY coins.id ORDER BY number DESC LIMIT 0, 5";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $results = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    return $results;
+
+    return $results;
+
+}
+
+
 // Function for creating an element in the database
 function create($table, $data)
 {
