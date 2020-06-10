@@ -12,7 +12,7 @@ include(ROOT_PATH . "/app/database/db.php");
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/cdd030e6ac.js" crossorigin="anonymous"></script>
-    
+    <script type="text/javascript" src="assets/js/search.js"></script>
     <title>NumAx</title>
 </head>
 

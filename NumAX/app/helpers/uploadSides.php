@@ -15,7 +15,7 @@
     if (in_array($ext,$allowed)){
         if($fileError === 0){
             if($fileSize<1000000){
-                $fileNameNew = $_SESSION['id']."_".$name1."_side1.".$ext;
+                $fileNameNew = $_SESSION['id']."_".$name1."_".$_POST['name']."_side1.".$ext;
                 $fileDestination ='assets/img/uploads/'.$fileNameNew;
                 $sides[]=$fileDestination;
                 move_uploaded_file($fileTmpName, $fileDestination);
@@ -45,7 +45,7 @@
        if (in_array($ext2,$allowed)){
            if($fileError === 0){
                if($fileSize2<100000000){
-                   $fileNameNew2 = $_SESSION['id']."_".$name2."_side2.".$ext2;
+                   $fileNameNew2 = $_SESSION['id']."_".$name2."_".$_POST['name']."_side2.".$ext2;
                    $fileDestination2 ='assets/img/uploads/'.$fileNameNew2;
                    $sides[]=$fileDestination2;
                    move_uploaded_file($fileTmpName2, $fileDestination2);

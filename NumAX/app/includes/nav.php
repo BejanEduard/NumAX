@@ -1,6 +1,4 @@
 <!-- // BASE_URL IN path.php  -->
-
-
 <nav class="container">
         <a id="logo" href="<?php echo BASE_URL . '/main.php' ?>">NumAX</a>
         <div class="nav-list">
@@ -36,6 +34,10 @@
                     </li>
                 <?php endif; ?>
             </ul>
-            <input type="text" placeholder="Search">
+            <form  class ="search-box"method="get" name="search">
+            <input type="text"  autocomplete="off" size ="25" name="search-text" placeholder="Search coin by name..." onkeyup="searchCoins(this.value)">
+            <div id ="livesearch" class="result">
+            </div>
+            </form>
         </div>
     </nav>

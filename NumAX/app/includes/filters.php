@@ -39,8 +39,7 @@ include(ROOT_PATH . '/app/helpers/filterOptions.php');
                 <option value="<?php echo $shapeDetails["shape"]; ?>"><?php echo $shapeDetails["shape"]; ?></option><?php } ?></select>
     </div>
 
-        </div>
-    <div class="form-item">
-        <button type="submit" name="filter-btn" class="btn form-btn">Filter</button>
+    <div class="filter-option">
+        <button type="submit" name="filter-btn" class="filter-btn"><h4>Filter</h4></button>
     </div>
 </form>
