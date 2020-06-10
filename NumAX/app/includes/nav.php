@@ -2,7 +2,7 @@
 
 
 <nav class="container">
-        <a id="logo" href="<?php echo BASE_URL . '/main.php' ?>">NumAX</a>
+        <a class="logo" href="<?php echo BASE_URL . '/main.php' ?>">NumAX</a>
         <div class="nav-list">
             <ul class="nav-list">
                 <li>
@@ -11,7 +11,7 @@
                 <li>
                 <a href="<?php echo BASE_URL . '/catalog.php' ?>">Catalog</a>
                 </li>
-                <?php if(isset($_SESSION['id'])):  ?>
+                <?php if (isset($_SESSION['id'])) : ?>
                     
                     <li>
                     <a href="<?php echo BASE_URL . '/create_coin.php' ?>"> Create Coin</a>
@@ -29,7 +29,7 @@
                     
                     
 
-                <?php else: ?>
+                <?php else : ?>
                 
                     <li>
                     <a href="<?php echo BASE_URL . '/register.php' ?>">Register</a>

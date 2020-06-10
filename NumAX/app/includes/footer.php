@@ -1,5 +1,5 @@
 <footer class="container">
-        <a id="logo" href="<?php echo BASE_URL . '/main.php' ?>">NumAX</a>
+        <a class="logo" href="<?php echo BASE_URL . '/main.php' ?>">NumAX</a>
         <ul class="nav-list">
                 <li>
                     <a href="<?php echo BASE_URL . '/main.php' ?>">Home</a>

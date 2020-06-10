@@ -1,4 +1,4 @@
-<?php include("path.php") ;
+<?php include("path.php");
 include(ROOT_PATH . "/app/database/db.php");
 ?>
 
@@ -19,13 +19,13 @@ include(ROOT_PATH . "/app/database/db.php");
 <body>
     
     <!-- NAVBAR HERE -->
-    <?php include(ROOT_PATH . "/app/includes/nav.php");  ?>
+    <?php include(ROOT_PATH . "/app/includes/nav.php"); ?>
     <?php include(ROOT_PATH . "/app/includes/messages.php") ?>
     
 
-    <section id="introduction">
+    <section class="introduction">
         <div class="container">
-            <div id="info" class="col-8 col-s-6">
+            <div class="info col-8 col-s-6 ">
                 <h1>The Biggest Collection of Coins on Earth</h1>
                 <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam aperiam ullam non quas, officia aspernatur
                     hic error delectus omnis, sequi modi. Veniam omnis facilis impedit magnam delectus ad nesciunt quae.</h3>
@@ -38,7 +38,7 @@ include(ROOT_PATH . "/app/database/db.php");
         </div>
     </section>
 
-    <section id="badge-section">
+    <section class="badge-section">
         <div class="container s-around">
             <div class="badge col-3 col-s-6">
                 <h2>World Coin Catalog</h2>
@@ -59,7 +59,7 @@ include(ROOT_PATH . "/app/database/db.php");
     </section>
 
     <!-- FOOTER HERE -->
-    <?php include(ROOT_PATH. "/app/includes/footer.php"); ?>
+    <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
     
 </body>
 
