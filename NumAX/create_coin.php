@@ -10,12 +10,13 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/cdd030e6ac.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/js/search.js"></script>
     <title>Document</title>
 </head>
 <body>
 <?php include(ROOT_PATH . "/app/includes/nav.php"); ?>
 <div class="container s-around">
-        <form id="coin-form" class="form-auth  col-5 col-s-10" action="create_coin.php" method="post">
+        <form id="coin-form" class="form-auth  col-5 col-s-10" action="create_coin.php" method="post" enctype="multipart/form-data">
         <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
         <?php include(ROOT_PATH . "/app/includes/messages.php") ?>
 
@@ -54,7 +55,7 @@
             <div class="form-item">
             <label class="form-label" for="country">Choose a country:</label>
                 <select class="form-input" name="country" id="countries" form="coin-form" value="<?php echo $country; ?>">
-                <option value="Afganistan">Afghanistan</option>
+                <option value="Afghanistan">Afghanistan</option>
    <option value="Albania">Albania</option>
    <option value="Algeria">Algeria</option>
    <option value="American-Samoa">American Samoa</option>
@@ -333,17 +334,17 @@
 
             <div class="form-item">
                 <label class="form-label">Weight (in g.)</label>
-                <input type="number" step="0.1" name="weight" class="form-input" value="<?php echo $weight; ?>">
+                <input type="number" step="0.01" name="weight" class="form-input" value="<?php echo $weight; ?>">
             </div>
 
             <div class="form-item">
                 <label class="form-label">Diameter (in mm.)</label>
-                <input type="number" step="0.1" name="diameter" class="form-input" value="<?php echo $diameter; ?>">
+                <input type="number" step="0.01" name="diameter" class="form-input" value="<?php echo $diameter; ?>">
             </div>
 
             <div class="form-item">
                 <label class="form-label">Thickness (in mm.)</label>
-                <input type="number" step="0.1" name="thickness" class="form-input" value="<?php echo $thickness; ?>">
+                <input type="number" step="0.01" name="thickness" class="form-input" value="<?php echo $thickness; ?>">
             </div>
 
             <div class="form-item">

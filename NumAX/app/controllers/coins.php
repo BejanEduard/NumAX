@@ -4,9 +4,10 @@
 include(ROOT_PATH . "/app/database/db.php");
 include(ROOT_PATH . "/app/helpers/validateCoin.php");
 include(ROOT_PATH . "/app/helpers/exportCoins.php");
+include(ROOT_PATH . "/app/helpers/uploadSides.php");
 
 $errors = array();
-
+$sides = array();
 $name = '';
 $provenience = '';
 $circulation = '';
@@ -160,7 +161,42 @@ if (isset($_POST['importCSV'])) {
 }
 
 
+
+if (isset($_POST['filter-btn'])) {
+    $filter = array();
+    if ($_POST['country'] == "All") {
+        unset($_POST['country']);
+    } else {
+        $filter['country'] = $_POST['country'];
+    }
+    if ($_POST['composition'] == "All") {
+        unset($_POST['composition']);
+    } else {
+        $filter['composition'] = $_POST['composition'];
+    }
+    if ($_POST['shape'] == "All") {
+        unset($_POST['shape']);
+    } else {
+        $filter['shape'] = $_POST['shape'];
+    }
+    $coins = selectAll($table, $filter);
+} else {
+    $coins = selectAll($table);
+}
+
+
+if (isset($_SESSION['id']) and isset($_POST['filter-btn'])) {
+    $filter['users.id'] = $_SESSION['id'];
+    $personal_coins = selectPersonalCoins($filter);
+    unset($_POST['filter-btn']);
+} else if (isset($_SESSION['id']) and !isset($_POST['filter-btn'])) {
+    $personal_coins = selectPersonalCoins(['users.id' => $_SESSION['id']]);
+}
+
+
+
 if (isset($_POST['create-btn'])) {
+
 
 
     $errors = validateCoin($_POST);
@@ -168,8 +204,9 @@ if (isset($_POST['create-btn'])) {
     if (count($errors) === 0) {
             // Delete from $_POST array the unwanted values
         unset($_POST['create-btn']);
-
-
+        $sides = upload();
+        $_POST['side1'] = $sides[0];
+        $_POST['side2'] = $sides[1];
         $coin_id = create($table, $_POST);
 
         $ownership_id = create('ownership', ["id_user" => $_SESSION['id'], "id_coin" => $coin_id]);
@@ -182,6 +219,7 @@ if (isset($_POST['create-btn'])) {
 
 
     } else {
+
 
         $name = $_POST['name'];
         $provenience = $_POST['provenience'];
@@ -263,6 +301,4 @@ if (isset($_GET['id'])) {
     }
 
 }
-
-
 ?>

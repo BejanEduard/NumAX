@@ -1,10 +1,8 @@
 <?php 
 include("path.php");
 include(ROOT_PATH . "/app/controllers/coins.php");
-
+ob_end_clean();
 header("Content-Type:text/xml;charset=iso-8859-1");
-
-
 
 echo "<?xml version='1.0' encoding='UTF-8'  ?>" . PHP_EOL;
 

@@ -12,6 +12,7 @@ include(ROOT_PATH . "/app/controllers/coins.php");
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/cdd030e6ac.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/js/search.js"></script>
     
     <title>NumAx</title>
 </head>
@@ -28,10 +29,10 @@ include(ROOT_PATH . "/app/controllers/coins.php");
         <div class="coin-picture col-5 col-s-4">
             <div class="coin-sides">
                 <a href="<?php echo BASE_URL . '\coin.php?id=' . $coin['id'] ?>">
-                <img src="assets/img/<?php echo $coin['side1']; ?>" alt="No Photo Available">
+                <img src="<?php echo $coin['side1']; ?>" alt="No Photo Available">
                 </a>
                 <a href="<?php echo BASE_URL . '\coin.php?id=' . $coin['id'] ?>">
-                <img src="assets/img/<?php echo $coin['side2']; ?>" alt="No Photo Available">
+                <img src="<?php echo $coin['side2']; ?>" alt="No Photo Available">
                 </a>
                 
                 <?php if (isset($_SESSION['id'])) : ?>

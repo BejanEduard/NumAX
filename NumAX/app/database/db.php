@@ -41,11 +41,10 @@ function selectAll($table, $conditions = [])
             if ($i === 0)
                 $sql = $sql . " WHERE $key=?";
             else {
-                $sql = $sql . "AND $key=?";
+                $sql = $sql . " AND $key=?";
             }
             $i++;
         }
-
 
     }
     $stmt = executeQuery($sql, $conditions);
@@ -85,8 +84,17 @@ function selectPersonalCoins($conditions)
 {
 
     $sql = "SELECT coins.* FROM coins JOIN ownership ON coins.id=ownership.id_coin 
-                                      JOIN users ON ownership.id_user=users.id WHERE users.id=?";
+                                      JOIN users ON ownership.id_user=users.id ";
 
+    $i = 0;
+    foreach ($conditions as $key => $value) {
+    if ($i === 0)
+        $sql .= " WHERE $key=?";
+    else {
+        $sql .= " AND $key=?";
+    }
+    $i++;
+}
     $stmt = executeQuery($sql, $conditions);
     $results = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     return $results;
