@@ -1,0 +1,288 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Scholarly HTML</title>
+    <link rel="stylesheet" href="scholarly.min.css">
+</head>
+
+<body prefix="schema: http://schema.org">
+    <header>
+        <h1>NumAX -Ghid de Utilizare</h1>
+    </header>
+    <div role="contentinfo">
+        <!-- dl -> datalist -->
+        <dl>
+            <dt>Authors</dt>
+            <dd>
+                <a href="https://github.com/BejanEduard">Bejan Eduard-Marian INFO IIA3</a>
+            </dd>
+            <dd>
+                <a href="https://github.com/stoleruSebastian">Stoleru Sebastian INFO IIA3</a>
+            </dd>
+        </dl>
+    </div>
+
+    <section id="introduction" role="doc-introduction">
+        <h2>
+            <span>1. </span>Introduction</h2>
+        <section id="Specificatii Proiect">
+            <h3>
+                <span>1.1 </span>Specificatii Proiect</h3>
+            <p>
+                Să se dezvolte o aplicație Web destinată colecționarilor de monede. Pe baza facilităților de căutare multi-criteriala implementate,
+                utilizatorii autentificați vor putea crea, inventaria și partaja informații despre monede de interes în functie
+                de diverse caracteristici (imagine, valoare, țară, perioadă de emisie, istoric etc.), plus vor putea importa/exporta
+                datele referitoare la monedele deținute. Se vor genera statistici diverse ce pot fi exportate în formate
+                deschise – minimal, CSV si PDF. Se va crea, de asemenea, un clasament al celor mai populare emisii monetare,
+                disponibil și ca flux de date RSS. Inspiratie:
+                <a href="https://en.numista.com/">Numista.</a> Bonus: utilizarea datelor RDF oferite de
+                <a href="http://nomisma.org/"> nomista.org </a>.
+            </p>
+        </section>
+    </section>
+
+    <section id="posibilitati">
+        <h2>
+            <span>2. </span>Posibilitati Web-Site</h2>
+
+        <h3>
+            <span>2.1</span> Utilizator delogat/neinregistrat :</h3>
+        <ul>
+            <li>Poate viziona pagina de start</li>
+            <li>Poate viziona toate monedele existente in baza de date</li>
+            <li>Se poate inregistra</li>
+            <li>Se poate loga</li>
+            <li>Poate cauta monede din baza de date</li>
+            <li>Poate vizualiza o moneda individuala</li>
+            <li>Poate filtra monede in functie de preferinte</li>
+        </ul>
+
+        <h3>
+            <span>2.2</span> Utilizator logat :</h3>
+        <ul>
+            <li>Poate viziona pagina de start</li>
+            <li>Poate viziona toate monedele existente in baza de date</li>
+            <li>Poate cauta monede in baza de date</li>
+            <li>Poate crea monede</li>
+            <li>Poate adauga monede la colectia personala</li>
+            <li>Poate viziona monede din colectia personala</li>
+            <li>Poate sterge monede din colectia personala</li>
+            <li>Poate vizualiza o moneda individuala</li>
+            <li>Poate cauta monede in baza de date</li>
+            <li>Poate filtra monede in functie de preferinte</li>
+            <li>Poate importa/exporta monede in format CSV</li>
+            <li>Poate vizualiza statistici </li>
+            <li>Poate exporta statistici in format CSV sau PDF</li>
+            <li>Se poate deloga</li>
+
+        </ul>
+
+    </section>
+
+    <section id="utilizator-delogat">
+        <h2>
+            <span>3. </span>Utilizator delogat</h2>
+
+
+        <figure typeof="sa:image">
+            <img src="img/nav_logout.jpg" alt="No picture available">
+            <figcaption>Navigarea cand utilizatorul nu este logat.</figcaption>
+        </figure>
+
+        <h3 id="Home">
+            <span>3.1</span> Pagina de start (Home) :</h3>
+        <p>Pe aceasta pagina, utilizatorul poate vedea informatii generale despre NumAX.</p>
+
+        <h3 id="catalog">
+            <span>3.2</span> Catalog :</h3>
+
+        <p>Pe aceasta pagina, utilizatorul poate vizualiza toate monedele existente in baza de date.</p>
+        <figure typeof="sa:image">
+            <img src="img/catalog.jpg" alt="No picture available">
+            <figcaption>Example of catalog coins</figcaption>
+        </figure>
+
+        <h3 id="filtrare">
+            <span>2.2</span> Filtrare :</h3>
+        <p> In pagina de catalog este posibila filtrarea monedelor dupa propriile preferinte.</p>
+        <p> Aceste preferinte sunt de tipul:
+            <ul>
+                <li>Country</li>
+                <li>Composition</li>
+                <li>Shape</li>
+            </ul>
+            <p>Dupa selectarea preferintelor, apasand pe butonul filter, pe pagina vor aparea un nou set de monede, filtrate
+                dupa preferintele utilizatorului.</p>
+        </p>
+        <figure typeof="sa:image">
+            <img src="img/filter.jpg" alt="No picture available">
+            <figcaption>Exemplu de filtrare</figcaption>
+        </figure>
+
+        <h3 id="register">
+            <span>2.3</span> Register :</h3>
+        <p> In pagina de register, un utilizator se poate inregistra pe site.</p>
+        <p> Pentru a reusi inregistrarea, utilizatorul trebuie sa completeze 4 campuri:
+            <ul>
+                <li>Username</li>
+                <li>Email</li>
+                <li>Password</li>
+                <li>Confirm Password </li>
+            </ul>
+            <h4>Exceptii</h4>
+            <p>Daca cele doua parole nu coincid, un mesaj de eroare va fi afisat.</p>
+        </p>
+
+        <h3 id="login">
+            <span>2.4</span> Login :</h3>
+        <p> In pagina de login, un utilizator se poate loga pe site.</p>
+        <p> Pentru a reusi logarea, utilizatorul trebuie sa completeze 2 campuri:
+            <ul>
+                <li>Username</li>
+                <li>Password</li>
+            </ul>
+            <h4>Exceptii</h4>
+            <p>Daca oricare dintre cele doua campuri nu coincid cu un utilizator creat anterior, va fi afisat un mesaj de eroare.</p>
+        </p>
+
+    </section>
+
+    <!-- LOOOOOOOOOOOOOOOOOOOOOOOOOOGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEDDDDDDDDDDDDDDDDDDDDD -->
+    <section id="utilizator-logat">
+        <h2>
+            <span>4. </span>Utilizator Logat</h2>
+
+
+        <figure typeof="sa:image">
+            <img src="img/nav_login.jpg" alt="No picture available">
+            <figcaption>Navigarea cand utilizatorul nu este logat.</figcaption>
+        </figure>
+
+        <h3>
+            <span>4.1</span>
+            <a href="#Home">Pagina de start (Home) :</a>
+        </h3>
+        <p>See 3.1</p>
+
+        <h3>
+            <span>4.2</span>
+            <a href="#catalog">Catalog </a>
+        </h3>
+        <p>Langa fiecare moneda, va aparea un buton care va prezenta statusul monedei:</p>
+        <ul>
+            <li>Add to your own collection - va adauga moneda la colectia personala</li>
+            <li>You already have this coin - moneda este deja prezenta in colectia personala</li>
+        </ul>
+        <p>See 3.2</p>
+
+
+        <h3>
+            <span>4.3</span>
+            <a href="#filtrare">Filtrare </a>
+        </h3>
+        <p>See 3.3</p>
+
+
+        <h3>
+            <span>4.4</span> Create Coin :</h3>
+        <p>Pe aceasta pagina, un utilizator va putea crea o moneda proprie. Dupa creare, moneda va fi adaugata automat in propria
+            colectie. </p>
+
+        <p> Pentru a crea cu succes o moneda, trebuie completate 16 campuri de diferite tipuri:
+            <ul>
+                <li>Name</li>
+                <li>Period</li>
+                <li>In Circulation</li>
+                <li>Coin Description </li>
+                <li>Image 1</li>
+                <li>Image 2</li>
+                <li>Country</li>
+                <li>Value </li>
+                <li>Currency</li>
+                <li>Composition</li>
+                <li>Weight</li>
+                <li>Diameter</li>
+                <li>Thickness</li>
+                <li>Shape</li>
+                <li>Obverse description</li>
+                <li>Reverse description </li>
+            </ul>
+
+            <h4>Exceptii</h4>
+            <p>Daca oricare dintre cele 16 campuri este completat gresit, sau o valoare lipseste, moneda nu va fi creata, ci
+                in schimb vor fi afisate mesaje de tip eroare pentru fiecare camp gresit.</p>
+        </p>
+        <figure typeof="sa:image">
+            <img src="img/errors.jpg" alt="No picture available">
+            <figcaption>Exemplu de mesaje posibile.</figcaption>
+        </figure>
+
+
+        <h3>
+            <span>4.5</span> My Catalog :</h3>
+        <p> Pe aceasta pagina se pot vizualiza toate monedele proprii.</p>
+        <p> In dreptul fiecarei monede, se afla un buton. Apasand pe acest buton, moneda va fi stearsa din colectia proprie,
+            dar nu si din baza de date.</p>
+        <figure typeof="sa:image">
+            <img src="img/delete.jpg" alt="No picture available">
+            <figcaption>Butonul de delete, langa moneda</figcaption>
+        </figure>
+
+        <p>Apasand pe butonul "Export Your Coins", un document cu extensia .csv va fi descarcat pe calculatorul personal, continand
+            informatii despre toate monedele din colectia proprie.</p>
+        <p>Apasand pe butonul "Import Your Coins", veti fi rugat sa atasati un document .csv valid.Dupa ce faceti acest lucru,
+            fisierul cu monede incarcat de catre dvs. va fi incarcat in baza de date.</p>
+
+
+        <h3>
+            <span>4.6</span> Statistics :</h3>
+        <p> Pe aceasta pagina se pot vizualiza statistici despre monedele proprii.</p>
+        <p> Sunt disponibile 7 tipuri de statistici, anume: </p>
+        <ul>
+            <li>Number of Coins by Country</li>
+            <li>Coins by Composition</li>
+            <li>Coins by Circulation</li>
+            <li>Coins by shape</li>
+            <li>Total weight</li>
+            <li>Average Diameter</li>
+            <li>Number of Coins</li>
+        </ul>
+        <figure typeof="sa:image">
+            <img src="img/statistics.jpg" alt="No picture available">
+            <figcaption>Exemplu de statistici disponibile</figcaption>
+        </figure>
+
+        <p> De asemenea, va fi disponibil un clasament al celor mai populare 5 emisii monetare din baza de date (dupa numarul
+            de detinatori), NU din colectia proprie.</p>
+        <p> Acest clasament este disponibil si ca flux de date RSS, la adresa "rss.php" </p>
+
+
+        <p>Apasand pe butonul "Export Statistics to PDF", un document cu extensia .pdf va fi descarcat pe calculatorul personal,
+            continand statistici despre toate monedele din colectia proprie.</p>
+        <p>Apasand pe butonul "Export Statistics to CSV", un document cu extensia .csv va fi descarcat pe calculatorul personal,
+            continand statistici despre toate monedele din colectia proprie.</p>
+
+
+
+        <h3>
+            <span>4.7</span> Logout :</h3>
+        <p>Acest buton delogheaza utilizatorul.</p>
+
+    </section>
+
+
+
+
+    <section role="doc-conclusion">
+        <h1>Concluzie</h1>
+        <p>Project GitHub
+            <a href="https://github.com/BejanEduard/NumAX">Proiectul este disponibil pe GitHub.</a>
+        </p>
+    </section>
+
+
+</body>
+
+</html>

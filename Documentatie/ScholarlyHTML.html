@@ -1,0 +1,267 @@
+﻿<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Scholarly HTML</title>
+    <link rel="stylesheet" href="scholarly.min.css">
+</head>
+
+<body prefix="schema: http://schema.org">
+    <header>
+        <h1>NumAX (Numismatic Artefact Explorer) / B </h1>
+    </header>
+    <div role="contentinfo">
+        <!-- dl -> datalist -->
+        <dl>
+            <dt>Authors</dt>
+            <dd>
+                <a href="https://github.com/BejanEduard">Bejan Eduard-Marian INFO IIA3</a>
+            </dd>
+            <dd>
+                <a href="https://github.com/stoleruSebastian">Stoleru Sebastian INFO IIA3</a>
+            </dd>
+        </dl>
+    </div>
+
+    <section id="introduction" role="doc-introduction">
+        <h2>
+            <span>1. </span>Introduction</h2>
+        <section id="Specificatii Proiect">
+            <h3>
+                <span>1.1 </span>Specificatii Proiect</h3>
+            <p>
+                Să se dezvolte o aplicație Web destinată colecționarilor de monede. Pe baza facilităților de căutare multi-criteriala implementate,
+                utilizatorii autentificați vor putea crea, inventaria și partaja informații despre monede de interes în functie
+                de diverse caracteristici (imagine, valoare, țară, perioadă de emisie, istoric etc.), plus vor putea importa/exporta
+                datele referitoare la monedele deținute. Se vor genera statistici diverse ce pot fi exportate în formate
+                deschise – minimal, CSV si PDF. Se va crea, de asemenea, un clasament al celor mai populare emisii monetare,
+                disponibil și ca flux de date RSS. Inspiratie:
+                <a href="https://en.numista.com/">Numista.</a> Bonus: utilizarea datelor RDF oferite de
+                <a href="http://nomisma.org/"> nomista.org </a>.
+            </p>
+        </section>
+    </section>
+
+    <section id="Structura">
+        <h2>
+            <span>2. </span>Structura Proiectului</h2>
+
+        <h3>
+            <span>2.1</span> Utilizator delogat/neinregistrat :</h3>
+        <ul>
+            <li>Home Page</li>
+            <li>Catalog</li>
+            <li>Register</li>
+            <li>Login</li>
+
+        </ul>
+        <p> Aici sunt prezentate paginile accesibile pentru un utilizator oarecare. </p>
+        <h3>
+            <span>2.2</span> Utilizator logat :</h3>
+        <ul>
+            <li>Home</li>
+            <li>Catalog</li>
+            <li>Create Coin</li>
+            <li>My Catalog</li>
+            <li>Statistics</li>
+            <li>Logout</li>
+        </ul>
+        <p> Aici sunt prezentate paginile accesibile pentru un utilizator logat. </p>
+
+        <h4>
+            <span>2.1.1</span> Home :</h4>
+        <p>Pagina de introducere a site-ului.</p>
+        <h4>
+            <span>2.1.2</span> Catalog :</h4>
+        <p>Pagina in care se gasesc toate monedele introduse vreodata de utilizatori pe site. Orice utilizator are dreptul de
+            a le vizualiza, dar un utilizator nelogat nu va putea adauga in propria colectie.
+        </p>
+        <h4>
+            <span>2.1.3</span> Register :</h4>
+        <p>Pagina de inregistrare a unui utilizator. Aici un utilizator va avea posibilitatea de a-si crea un cont pe site-ul
+            nostru.
+        </p>
+        <h4>
+            <span>2.1.4</span> Login :</h4>
+        <p>Pagina de logare.</p>
+
+
+        <h4>
+            <span>2.2.1</span> Home :</h4>
+        <p>Pagina de introducere a site-ului.</p>
+        <h4>
+            <span>2.2.2</span> Catalog :</h4>
+        <p>Pagina in care se gasesc toate monedele introduse vreodata de utilizatori pe site. Un utilizator va putea adauga
+            in propria colectie monede existente pe aceasta pagina.
+        </p>
+        <h4>
+            <span>2.2.3</span> Create Coin :</h4>
+        <p>Pe aceasta pagina, un utilizator logat va avea posibilitatea de a-si crea propria moneda, urmand anumite indicatii.
+            Moneda va fi adaugata in catalog, cat si in propriul catalog.
+        </p>
+        <h4>
+            <span>2.2.4</span> My Catalog :</h4>
+        <p>Pagina pe care se afla toate monezile pe care utilizatorul le detine.Tot din aceasta pagina, utilizatorul va putea
+            sterge monezi din propria colectie, dar nu si din catalog.</p>
+        <p>De asemenea exista posibilitatea de a importa/exporta monedele proprii in format .CSV .</p>
+        <h4>
+            <span>2.2.5</span> Statistics:</h4>
+        <p>Pagina pe care se afla statistici generate pe baza monedelor din colectia personala. Statisticile disponibile sunt:</p>
+        <ul>
+            <li>Coins by Country</li>
+            <li>Coins by Composition</li>
+            <li>Coins by Circulation</li>
+            <li>Coins by Shape</li>
+            <li>Total Weight</li>
+            <li>Average Diameter</li>
+            <li>Number of Coins</li>
+        </ul>
+        <p> Utilizatorul va putea exporta aceste statistici in format PDF si CSV.</p>
+        <p> Pe aceasta pagina se mai afla si un clasament al celor mai populare cinci emisii monetare, disponibil si ca flux
+            de date RSS( disponibil la "rss.php").</p>
+
+        <h4>
+            <span>2.2.6</span> Logout :</h4>
+        <p>Buton prin care un utilizator se delogheaza de pe site-ul nostru.</p>
+
+
+
+    </section>
+
+    <section id="Informatii">
+        <h2>
+            <span>3. </span>Informatii despre proiect</h2>
+        <p>
+            Pentru partea de client, interfata aplicatiei/sitului Web a fost marcata folosind HTML5. S-au utilizat foi de stiluri CSS
+            valide (verificate in CSS Lint). De asemenea pentru generarea statisticilor a fost nevoie de JavaScript (Google
+            Charts), iar pentru cautarea monedelor asincrona s-au folosit suita de tehnologii AJAX.
+        </p>
+        <p>
+            Pe partea de server, am ales sa folosim limbajul de programare PHP. Nu s-au folosit framework-uri.
+        </p>
+
+        <p>
+            Pentru stocarea si management-ul datelor, am utilizat MySQL. In baza de date exista 3 tabele (users, coins, ownership).
+        </p>
+        <p>
+            Pentru hostarea locala a site-ului, am folosit pachetul XAMPP.
+        </p>
+    </section>
+
+    <section id="Parcurs">
+        <h2>
+            <span>4. </span>Parcurs Proiect</h2>
+        <p>
+            <h3>
+                Bejan Eduard-Marian</h3>
+            <p>
+                <ul>
+                    <li> Front-End pentru paginile:
+                        <ul>
+                            <li>Home</li>
+                            <li>Catalog</li>
+                            <li>Register</li>
+                            <li>Login</li>
+                            <li>My Catalog</li>
+                            <li>Create Coin</li>
+                            <li>Statistics</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Creare, adaugare, stergere de monede
+                    </li>
+                    <li>
+                        Validarea formularelor de register, login si creare moneda
+                    </li>
+                    <li>
+                        Generarea de statistici
+                    </li>
+                    <li>
+                        Import/Export de date ( monede si statistici )
+                    </li>
+                    <li>
+                        RSS Feed
+                    </li>
+                </ul>
+            </p>
+            <h3>
+                Stoleru Sebastian</h3>
+            <p>
+                <ul>
+                    <li> Front-End :
+                        <ul>
+                            <li>Bara de navigare</li>
+                            <li>Footer</li>
+                            <li>Filtre Date</li>
+                            <li>Search Bar</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Filtrare de monezi dupa :
+                        <ul>
+                            <li>Nume</li>
+                            <li>Tara</li>
+                            <li>Compozitie</li>
+                            <li>Forma</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Incarcare de imagini
+                    </li>
+
+                </ul>
+            </p>
+    </section>
+
+
+    <section id="Mentiuni">
+        <h2>
+            <span>5. </span>Mentiuni
+        </h2>
+        </p>
+        <p>
+            Intreaga echipa de la FII pentru suport constant, claritate si disponibilitate:
+            <a href="https://profs.info.uaic.ro/~busaco/teach/courses/web/">
+                TW WEB</a>
+        </p>
+
+        <p>
+            Awa Melvine - Introducere in PHP
+            <a href="https://www.youtube.com/channel/UCjOVC0tPIo78a_DNeYs7ETQ">
+                Youtube Channel - Subscribe</a>
+        </p>
+        <p>
+            PHP Manual
+            <a href="https://www.php.net/manual/ro/index.php">
+                Documentatie</a>
+        </p>
+        <p>
+            XAMPP
+            <a href="https://www.apachefriends.org/ro/index.html">
+                Apache Suite</a>
+        </p>
+        <p>
+            Pentru chart-uri profesionale
+            <a href="https://developers.google.com/chart">
+                Google Charts</a>
+        </p>
+        <p>
+            W3 School
+            <a href="https://www.w3schools.com/">
+                HTML5 and CSS3 </a>
+        </p>
+    </section>
+
+
+    <section role="doc-conclusion">
+        <h1>Concluzie</h1>
+        <p>Project GitHub
+            <a href="https://github.com/BejanEduard/NumAX">Proiectul este disponibil pe GitHub.</a>
+        </p>
+    </section>
+
+
+</body>
+
+</html>

@@ -225,8 +225,6 @@ if (isset($_POST['create-btn'])) {
         $provenience = $_POST['provenience'];
         $circulation = $_POST['circulation'];
         $description = $_POST['description'];
-        $side1 = $_POST['side1'];
-        $side2 = $_POST['side2'];
         $country = $_POST['country'];
         $value = $_POST['value'];
         $currency = $_POST['currency'];
