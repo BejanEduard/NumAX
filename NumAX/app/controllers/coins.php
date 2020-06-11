@@ -160,6 +160,8 @@ if (isset($_POST['importCSV'])) {
 
 }
 
+
+
 if (isset($_POST['filter-btn'])) {
     $filter = array();
     if ($_POST['country'] == "All") {
@@ -182,11 +184,12 @@ if (isset($_POST['filter-btn'])) {
     $coins = selectAll($table);
 }
 
+
 if (isset($_SESSION['id']) and isset($_POST['filter-btn'])) {
     $filter['users.id'] = $_SESSION['id'];
     $personal_coins = selectPersonalCoins($filter);
     unset($_POST['filter-btn']);
-} else {
+} else if (isset($_SESSION['id']) and !isset($_POST['filter-btn'])) {
     $personal_coins = selectPersonalCoins(['users.id' => $_SESSION['id']]);
 }
 
@@ -298,6 +301,4 @@ if (isset($_GET['id'])) {
     }
 
 }
-
-
 ?>

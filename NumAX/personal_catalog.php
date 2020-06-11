@@ -65,7 +65,7 @@
         </div>
         <div class="coin-text col-7 col-s-8">
             <div class="coin-details">
-                <h3><?php echo $coin['name'] . ' ' . $coin['provenience']; ?>  </h3>
+                <h3><?php echo $coin['name'] . ' - Period: ' . $coin['provenience']; ?>  </h3>
                 <?php if ($coin['circulation'] === 1) : ?>
                 <h4>
                 Non-circulating coin :  </h4>

@@ -138,40 +138,7 @@ function resize() {
     <!-- NAVBAR HERE -->
     <?php include(ROOT_PATH . "/app/includes/nav.php"); ?>
 
-    <div class="filter-section">
-        <div class="container">
-            <div class="filter-option">
-                <h4>Country</h4>
-                <i class="fas fa-caret-down"></i>
-            </div>
-            <div class="filter-option">
-                <h4>Age</h4>
-                <i class="fas fa-caret-down"></i>
-            </div>
-            <div class="filter-option">
-                <h4>Dimension</h4>
-                <i class="fas fa-caret-down"></i>
-            </div>
-            <div class="filter-option">
-                <h4>Rarity</h4>
-                <i class="fas fa-caret-down"></i>
-            </div>
-            <div class="filter-option">
-                <h4>Price</h4>
-                <i class="fas fa-caret-down"></i>
-            </div>
-            <div class="filter-option">
-                <h4>Weight</h4>
-
-                <i class="fas fa-caret-down"></i>
-            </div>
-            <div class="filter-option">
-                <h4>Composition</h4>
-                <i class="fas fa-caret-down"></i>
-            </div>
-
-        </div>
-    </div>
+    
 
     <section id="personal-statistics">
     <div class="container s-around">
