@@ -28,11 +28,11 @@ function validateCoin($coin)
         array_push($errors, 'Description is required!');
     }
 
-    if (empty($coin['side1'])) {
+    if (empty($_FILES['side1']['name'])) {
         array_push($errors, 'Front image is required!');
     }
 
-    if (empty($coin['side2'])) {
+    if (empty($_FILES['side2']['name'])) {
         array_push($errors, 'Reverse image is required!');
     }
 
